@@ -1,0 +1,85 @@
+apply plugin: 'com.android.application'
+
+android {
+
+    compileSdkVersion 29
+    defaultConfig {
+        applicationId "tw.tcnr18.m1901"
+        minSdkVersion 23
+        targetSdkVersion 29
+        versionCode 4
+        versionName "4.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    productFlavors {
+    }
+}
+
+
+android {
+    signingConfigs {
+//        tcnr88key_01 {
+//            storeFile file('C:\\android-work\\CH22-googleplay\\tcnr88key_01.jks')
+//            keyAlias 'upload'
+//            storePassword '2djugluuDavid13590'
+//            keyPassword '2djugluuDavid3590x'
+//        }
+        HappyPlayLBS {
+            storeFile file('C:\\android-work\\CH22-GooglePlay\\tcnr18key01.jks')
+            storePassword 'A99552ro123'
+            keyAlias 'upload'
+            keyPassword 'B99552ro123'
+        }
+    }
+//    ----------------------------------------------------------------------------------------------------
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+android {
+    buildTypes {
+        release {
+            // Enables code shrinking, obfuscation, and optimization for only
+            // your project's release build type.
+            // 縮減程式碼，沒有用到的、空白處、註解
+            // 解決上架程式模糊，混淆，不清楚的GOOGLE警告
+            minifyEnabled true
+
+            // Enables resource shrinking, which is performed by the
+            // Android Gradle plugin.
+            shrinkResources true
+
+            // Includes the default ProGuard rules files that are packaged with
+            // the Android Gradle plugin. To learn more, go to the section about
+            // R8 configuration files.
+            proguardFiles getDefaultProguardFile(
+                    'proguard-android-optimize.txt'),
+                    'proguard-rules.pro'
+        }
+    }
+}
+
+
+dependencies {
+
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    //noinspection GradleCompatible
+//    implementation 'org.jbundle.util.osgi.wrapped:org.jbundle.util.osgi.wrapped.org.apache.http.client:4.1.2'
+//    implementation 'org.apache.httpcomponents:httpclient-android:4.3.5.1'
+    implementation 'com.google.android.gms:play-services-maps:17.0.0'
+    // Dependency for Google Sign-In
+    implementation 'com.google.android.gms:play-services-auth:18.1.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.0'
+    implementation("com.squareup.okhttp3:okhttp:4.9.0")
+}

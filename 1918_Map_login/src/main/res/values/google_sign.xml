@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- TODO(user): replace with your real server client ID -->
+    <!-- Server Client ID.  This should be a valid Web OAuth 2.0 Client ID obtained
+         from https://console.developers.google.com/  key -->
+    <!--https://developers.google.com/identity/sign-in/android/start-integrating？-->
+    <string name="server_client_id">793612015307-7g8dv7ulbenquh89qsou7ui0pmkhc4go.apps.googleusercontent.com</string>
+</resources>

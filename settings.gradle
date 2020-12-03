@@ -1,0 +1,3 @@
+include ':1918_Map_login'
+include ':HappyPlayLBS'
+rootProject.name = "CH22-GooglePlay"
